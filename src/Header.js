@@ -1,16 +1,8 @@
-import './App.js';
-
-import  {createRoot}  from 'react-dom/client';
-
-const container = document.getElementById("root");
-const root = createRoot(container);
-
-    function Header() {
-        return (
-              <h1>Jungle Home</h1>
+export default function Header(){
+                    return (
+                            <>
+                            <h1>Jungle Home</h1>
+                            <div id='rootChild'></div>
+                            </>
         );
-}
-
-root.render(<Header/>);
-
-export default Header
+    }
