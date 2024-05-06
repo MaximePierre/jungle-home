@@ -4,14 +4,31 @@ import './index.css';
 //import App from './App';
 import Header from './Header';
 import reportWebVitals from './reportWebVitals';
+import Description from './Description';
 
+//Entry point on DOM element root
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+//Component Assembly Functions
+function Banner() {
+  return (
+    <div id="banner" >
+      <Header />
+      <Description />
+    </div>
+  )
+}
+
+
+//Rendering to the DOM
 root.render(
+  <>
   <React.StrictMode>
-    <Header />
+    <Banner />
   </React.StrictMode>
+  </>
 );
+// PM StrictMode only works in Dev mode
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
