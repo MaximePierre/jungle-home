@@ -1,3 +1,4 @@
+import '../styles/Cart.css'
 import { products } from '../Product.js'
 
 const devise = "€";
