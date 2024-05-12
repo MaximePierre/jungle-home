@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/index.css';
 //import App from './App';
-import Header from './Header';
+import Banners from './components/Banner';
 import reportWebVitals from './reportWebVitals';
-import Description from './Description';
-import Carts from './Cart';
+import Carts from './components/Cart';
 
 //Entry point on DOM element root
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,8 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 function Banner() {
   return (
     <div id="banner" >
-      <Header />
-      <Description />
+      <Banners />
     </div>
   )
 }
@@ -31,13 +29,12 @@ function Cart() {
 //Rendering to the DOM
 root.render(
   <>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
     <Banner />
     <Cart />
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
   </>
 );
-// PM StrictMode only works in Dev mode
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
