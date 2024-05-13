@@ -1,5 +1,5 @@
 import '../styles/Cart.css'
-import { products } from '../Product.js'
+import { products } from '../datasTest/Product.js'
 
 const devise = "€";
 let totalPrice = 0;
@@ -21,7 +21,7 @@ export default function Carts(){
                     </li>
       
     return (
-        <>
+        <div className="jh-cart-box">
         <h2>
             Panier : 
         </h2>
@@ -31,6 +31,6 @@ export default function Carts(){
         <ul>
            Total : {totalCart}
         </ul>
-        </>
+        </div>
 );
 }

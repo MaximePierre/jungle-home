@@ -5,6 +5,7 @@ import './styles/index.css';
 import Banners from './components/Banner';
 import reportWebVitals from './reportWebVitals';
 import Carts from './components/Cart';
+import ShoppingLists from './components/ShoppingList'
 
 //Entry point on DOM element root
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,7 +25,13 @@ function Cart() {
     </div>
   )
 }
-
+function ShoppingList() {
+  return (
+    <div id ="shoppingList">
+      <ShoppingLists />
+    </div>
+  )
+}
 
 //Rendering to the DOM
 root.render(
@@ -32,6 +39,7 @@ root.render(
   {/* <React.StrictMode> */}
     <Banner />
     <Cart />
+    <ShoppingList />
   {/* </React.StrictMode> */}
   </>
 );
