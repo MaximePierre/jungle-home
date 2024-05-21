@@ -3,6 +3,8 @@ import {plantList} from '../datasTest/plantList'
 
 
 const categorys = [];
+let producted = false;
+let productOnCat = [];
 
 
     plantList.forEach(function (object) {
@@ -39,14 +41,14 @@ export default function ShoppingList() {
              
          }
      })
+     producted = true;
      console.log(productOnCat)
+     console.log(producted);
+     //console.log("ok");
      return (   
-                productOnCat.map(product =>
-                    <li key={product}>
-                        <p>{product.name}</p>
-                    </li>
+                productOnCat
         )
-     )
+     
   }
     return (
         <>
@@ -68,6 +70,16 @@ export default function ShoppingList() {
                                         </li>
                 )} */}
             </ul>
+            {
+                producted &&(
+                    productOnCat.map(product =>
+                                            <li key={product}>
+                                                <p>{product.name}</p>
+                                            </li>
+
+                    )
+                )
+            }
             <ul>
                  {/* <CategorySelected /> */}
             </ul>
