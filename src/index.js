@@ -19,7 +19,7 @@ function Banner() {
   )
 }
 function Cart() {
-  return(
+  return (
     <div id="cart">
       <Carts />
     </div>
@@ -27,7 +27,7 @@ function Cart() {
 }
 function ShoppingList() {
   return (
-    <div id ="shoppingList">
+    <div id="shoppingList">
       <ShoppingLists />
     </div>
   )
@@ -36,11 +36,11 @@ function ShoppingList() {
 //Rendering to the DOM
 root.render(
   <>
-  {/* <React.StrictMode> */}
+    {/* <React.StrictMode> */}
     <Banner />
     <Cart />
     <ShoppingList />
-  {/* </React.StrictMode> */}
+    {/* </React.StrictMode> */}
   </>
 );
 // If you want to start measuring performance in your app, pass a function

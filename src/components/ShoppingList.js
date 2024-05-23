@@ -1,75 +1,58 @@
-import {plantList} from '../datasTest/plantList'
-// import {useState} from 'react';
+import { plantList } from '../datasTest/plantList';
+import { useState } from 'react';
 
 
 const categorys = [];
 
 
-    plantList.forEach(function (object) {
-    
-        let categoryIsUnik = categorys.includes(object.category);
-        
-        if ( categoryIsUnik === false) {
-            categorys.push(object.category);
-        }else {
-            // send to error page
-        }       
-    });
-//console.log(categorys);
+plantList.forEach(function (object) {
 
+    let categoryIsUnik = categorys.includes(object.category);
 
-   
+    if (categoryIsUnik === false) {
+        categorys.push(object.category);
+    } else {
+        // send to error page 
+    }
+});
 
-
-  
 export default function ShoppingList() {
 
-    function CategorySelected(value){
-    const productOnCat = [];
-    //console.log(productOnCat)
-    
-     const keys = value.target.value;
-    
-    plantList.forEach(function (object){
-        let objectIsUnik = productOnCat.includes(keys)
-        if (object.category === keys){
-            if (objectIsUnik === false){
-                productOnCat.push(object)
-            }
-             
-         }
-     })
-     console.log(productOnCat)
-     return (   
-                productOnCat.map(product =>
-                    <li key={product}>
-                        <p>{product.name}</p>
-                    </li>
-        )
-     )
-  }
+    const [selectedCategorie, setselectedCategorie] = useState(plantList)
+
+
     return (
         <>
-            <ul>
+            <label htmlFor="cat-select">Choisir une categorie:</label>
+            <select
+                name="categorys"
+                id="category-selecter"
+
+                onChange={e => {
+                    const option = e.target.value;
+                    const values = [];
+                    plantList.forEach(function (object) {
+                        if (object.category === option) {
+                            values.push(object)
+                        }
+                    })
+                    setselectedCategorie(values);
+                }}>
+                <option value="allPlantes">Toutes les plantes</option>
                 {
-                   categorys.map(cat => 
-                                        <li key={cat}>
-                                           <button value={cat} onClick={CategorySelected}>
-                                                {cat}
-                                           </button> 
-                                        </li>
-                                        )
+                    categorys.map(cat =>
+                        <option key={cat} value={cat}>{cat}</option>
+                    )
+
                 }
-                {/* {plantList.map(plant => 
-                                        <li key={plant.id}>
-                                            <p>
-                                                {plant.category}
-                                            </p>
-                                        </li>
-                )} */}
-            </ul>
+            </select>
             <ul>
-                 {/* <CategorySelected /> */}
+                {selectedCategorie.map(plants =>
+                    <li key={plants.id}>
+                        {plants.name}
+                    </li>
+                )
+                }
             </ul>
         </>
 
