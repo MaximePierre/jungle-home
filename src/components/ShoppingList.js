@@ -26,7 +26,7 @@ export default function ShoppingList() {
 
     return (
         <>
-            {/* component Filter.js a faire */}
+            {/* component Filter a faire */}
             <label htmlFor="cat-select">Choisir une categorie:</label>
             <select
                 name="categorys"
@@ -34,15 +34,14 @@ export default function ShoppingList() {
 
                 onChange={e => {
                     const option = e.target.value;
-                    const values = [];
+                    let values = [];
                     plantList.forEach(function (object) {
                         if (object.category === option) {
                             values.push(object)
                         } else if (option === "allPlantes") {
                             values.push(object)
                         }
-                    })
-                    console.log(option);
+                    })                 
                     setselectedCategorie(values);
                 }}>
                 <option value="allPlantes">Toutes les plantes</option>
