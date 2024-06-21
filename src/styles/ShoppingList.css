@@ -3,12 +3,24 @@
     justify-content: center;
     flex-direction: column;
 } */
+.filter-container{
+	margin: 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.plant-list-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .lmj-plant-list {
 	list-style-type: none;
 	padding: 32px;
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 800px;
+	align-items: center;
 }
 /* 
 .lmj-plant-item {

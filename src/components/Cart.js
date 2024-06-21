@@ -1,12 +1,14 @@
 import '../styles/Cart.css'
 import { products } from '../datasTest/Product.js'
 
+
 const devise = "€";
 let totalPrice = 0;
 //let listItems;
 
-export default function Carts() {
 
+export default function Carts() {
+    
     const listItems = products.map(product => <li key={product.id}>
         <p>
             {product.name + " "}

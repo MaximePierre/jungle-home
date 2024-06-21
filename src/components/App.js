@@ -2,6 +2,7 @@ import Banner from './Banner'
 import logo from '../assets/logo.png'
 import Cart from './Cart'
 import ShoppingList from './ShoppingList'
+import Footer from './Footer'
 
 export default function App() {
 	return (
@@ -12,6 +13,7 @@ export default function App() {
 			</Banner>
 			<Cart />
 			<ShoppingList />
+			<Footer />
 		</div>
 	)
 }
